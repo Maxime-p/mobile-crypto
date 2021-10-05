@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
-export default function map(params) {
+export default function Map(params) {
   const [locations, setLocations] = useState(null);
 
   useEffect(() => {
