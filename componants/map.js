@@ -7,17 +7,15 @@ export default function map(params) {
 
   useEffect(() => {
     setLocations(params);
-  })();
+  }, []);
 
-  let text = "Waiting..";
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
+  if (locations) {
     return (
       <View style={styles.full}>
         <MapView style={styles.full}>
-          {locations.map((location) => (
+          {locations.map((location, i) => (
             <Marker
+              key={i}
               coordinate={{
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
