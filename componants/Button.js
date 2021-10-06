@@ -1,18 +1,9 @@
 import React from 'react'
 import { Button, StyleSheet } from 'react-native'
-import {
-    NavigationContainer,
-    createNavigationContainerRef,
-} from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const navigationRef = createNavigationContainerRef()
-
-function navigate(name, params) {
-    if (navigationRef.isReady()) {
-        navigationRef.navigate(name, params)
-    }
-}
+const Stack = createNativeStackNavigator()
 
 export default function CustomButton({ outlined, text, link }) {
     if (outlined) {
@@ -20,11 +11,13 @@ export default function CustomButton({ outlined, text, link }) {
             <Button
                 title={text}
                 type="outline"
-                onPress={() => navigate('Adoption')}
+                onPress={() => navigation.navigate('Home')}
             />
         )
     } else {
-        return <Button title={text} onPress={() => navigate('Adoption')} />
+        return (
+            <Button title={text} onPress={() => navigation.navigate('Home')} />
+        )
     }
 
     //   <Button title={text} onPress={() => navigation.push({ link })} />
