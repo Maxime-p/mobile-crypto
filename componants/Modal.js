@@ -13,7 +13,6 @@ export default function CustomModal({ textButton, mainText }) {
                 transparent={true}
                 visible={modalVisibility}
                 onRequestClose={() => {
-                    Alert.alert('Modal has been closed.')
                     modalVisibility(!modalVisibility)
                 }}
             >
