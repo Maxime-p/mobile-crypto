@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import {Dimensions, StyleSheet, View} from "react-native";
 import MapView, {Marker} from "react-native-maps";
 
-export default function Adoption() {
+export default function AdoptionScreen() {
     const map = useRef();
 
     const [location, setLocation] = useState({latitude: 0, longitude: 0});
