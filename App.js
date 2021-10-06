@@ -2,7 +2,7 @@ import React from "react";
 import {StyleSheet, SafeAreaView, Platform, Text} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import {StatusBar} from "expo-status-bar";
+import Constants from 'expo-constants';
 
 import HomeScreen from "./screens/HomeScreen"
 import AdoptionScreen from "./screens/AdoptionScreen";
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "white",
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0,
         paddingHorizontal: 20
     },
 });
