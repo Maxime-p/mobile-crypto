@@ -21,10 +21,7 @@ export default function AuthScreen({ navigation }) {
             <View style={styles.content}>
                 <Text>Bienvenue sur l’Arch</Text>
                 <Button title={'Importer son portefeuille '} onPress={press} />
-                <Button
-                    title={'CRÉER UN PORTEFEUILLE '}
-                    onPress={Alert.alert('setIsAuth to true')}
-                />
+                <Button title={'CRÉER UN PORTEFEUILLE '} onPress={press} />
             </View>
         </View>
     )
