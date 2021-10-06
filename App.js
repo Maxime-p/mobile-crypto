@@ -21,11 +21,16 @@ export default function App() {
         <SafeAreaView style={styles.container}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName={isAuth ? 'App' : 'Auth'}>
-                    <Stack.Screen name="Auth" component={AuthScreen} />
+                    <Stack.Screen
+                        name="Auth"
+                        component={AuthScreen}
+                        options={{ headerShown: false }}
+                    />
                     <Stack.Screen
                         name="App"
                         component={Nav}
                         style={styles.nav}
+                        options={{ headerShown: false }}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
