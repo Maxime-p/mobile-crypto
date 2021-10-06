@@ -1,10 +1,10 @@
 import React from "react";
 import {Text} from "react-native";
 
-export default function ProjectScreen() {
+export default function WalletScreen() {
     return(
         <Text>
-            Projet
+            Wallet
         </Text>
     )
 }

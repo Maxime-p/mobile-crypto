@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     image: {
         height: 100,
         width: Dimensions.get('window').width * 0.4,
-        borderTopEndRadius: 16,
-        borderTopStartRadius: 16,
+        borderTopRightRadius: 16,
+        borderTopLeftRadius: 16,
     },
     text: {
         fontSize: 10,

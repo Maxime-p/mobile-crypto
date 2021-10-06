@@ -1,25 +1,25 @@
-import React from "react";
-import {StyleSheet, SafeAreaView, Platform, Text} from "react-native";
+import React, {useState} from "react";
+import {StyleSheet, SafeAreaView, Platform, Text, Dimensions} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Constants from 'expo-constants';
 
-import HomeScreen from "./screens/HomeScreen"
-import AdoptionScreen from "./screens/AdoptionScreen";
+import Nav from "./componants/Nav";
 import AuthScreen from "./screens/AuthScreen";
 
-const Stack = createNativeStackNavigator();
-
 export default function App() {
+    const [isAuth, setIsAuth] = useState(false)
+
     return (
         <SafeAreaView style={styles.container}>
-            <NavigationContainer>
-                <Stack.Navigator screenOptions={{ headerShown: false }}>
-                    <Stack.Screen name="Home" component={HomeScreen}/>
-                    <Stack.Screen name="Adoption" component={AdoptionScreen}/>
-                    <Stack.Screen name="Auth" component={AuthScreen}/>
-                </Stack.Navigator>
-            </NavigationContainer>
+            {!isAuth ?
+                <AuthScreen />
+                :
+                <NavigationContainer>
+                    <Nav style={styles.nav}/>
+                </NavigationContainer>
+            }
+
+
         </SafeAreaView>
     );
 }
@@ -29,6 +29,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "white",
         paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0,
-        paddingHorizontal: 20
     },
+    nav: {
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        width: Dimensions.get('window').width
+    }
 });
