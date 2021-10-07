@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import Box from "../icons/Box";
+import Box from "../../assets/icons/Box";
 
 export const TabBarAdvancedButton = ({...props}) => (
     <View

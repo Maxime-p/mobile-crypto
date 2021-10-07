@@ -9,8 +9,8 @@ import {
 import {useAssets} from "expo-asset";
 import {useFonts} from "expo-font";
 import CustomButton from "../componants/Button";
-import Import from "../componants/icons/Import";
-import Wallet from "../componants/icons/Wallet";
+import Import from "../assets/icons/Import";
+import Wallet from "../assets/icons/Wallet";
 
 export default function AuthScreen({ navigation }) {
     const [isAssetsLoaded] = useAssets([

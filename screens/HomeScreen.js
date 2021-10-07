@@ -10,7 +10,6 @@ import {
     ImageBackground,
 } from 'react-native'
 import ArchCounter from '../componants/ui/ArchCounter'
-import Card from '../componants/ui/Card.js'
 import CustomTitle from '../componants/ui/Title.js'
 import CustomBouton from '../componants/Button.js'
 export default function HomeScreen({ navigation }) {
