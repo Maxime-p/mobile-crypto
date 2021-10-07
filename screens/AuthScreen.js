@@ -12,12 +12,19 @@ import {useFonts} from "expo-font";
 
 export default function AuthScreen({ navigation }) {
     const [isAssetsLoaded] = useAssets([
-        require('../assets/img/auth.png')
+        require('../assets/img/auth.png'),
+        require('../assets/img/bg-dark.png'),
+        require('../assets/img/box-kang.png'),
+        require('../assets/img/home-top.png'),
+        require('../assets/img/pack-asso.png'),
+        require('../assets/img/pack-hallow.png'),
     ])
 
     const [isFontsLoaded] = useFonts({
-        Raleway: require('../assets/fonts/Raleway/Raleway-Black.ttf'),
+        Raleway: require('../assets/fonts/Raleway/Raleway-Bold.ttf'),
         HelveticaNeue: require('../assets/fonts/HelveticaNeue/HelveticaNeue.ttf'),
+        HelveticaNeueMedium: require('../assets/fonts/HelveticaNeue/HelveticaNeue-Medium.ttf'),
+        HelveticaNeueBold: require('../assets/fonts/HelveticaNeue/HelveticaNeue-Bold.ttf'),
     });
 
 
@@ -28,16 +35,20 @@ export default function AuthScreen({ navigation }) {
         <View style={styles.container}>
             <Image source={require('../assets/img/auth.png')} style={styles.image} />
             <View style={styles.content}>
+                {!isAssetsLoaded && !isFontsLoaded ?
+                    <Text>Loading</Text>
+                    :
+                    <View>
+                        <Text>Bienvenue sur l’Arch</Text>
+                        <TouchableOpacity style={styles.button} onPress={press}>
+                            <Text> IMPORTER SON PORTEFEUILLE </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.outlinedbutton} onPress={press}>
+                            <Text> CRÉER UN PORTEFEUILLE </Text>
+                        </TouchableOpacity>
+                    </View>
+                }
 
-                <View>
-                    <Text>Bienvenue sur l’Arch</Text>
-                    <TouchableOpacity style={styles.button} onPress={press}>
-                        <Text> IMPORTER SON PORTEFEUILLE </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.outlinedbutton} onPress={press}>
-                        <Text> CRÉER UN PORTEFEUILLE </Text>
-                    </TouchableOpacity>
-                </View>
             </View>
         </View>
     )
