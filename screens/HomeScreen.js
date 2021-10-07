@@ -16,7 +16,7 @@ import CustomBouton from '../componants/Button.js'
 export default function HomeScreen({ navigation }) {
     return (
         <ScrollView style={styles.container}>
-            <View style={{ backgroundColor: '#4BC6B9', height: 60 }}>
+            <View style={{ backgroundColor: '#4BC6B9', height: 40 }}>
                 <ArchCounter />
             </View>
 
@@ -26,8 +26,8 @@ export default function HomeScreen({ navigation }) {
             >
                 <View
                     style={{
-                        width: Dimensions.get('window').width * 0.68,
-                        padding: 10,
+                        width: Dimensions.get('window').width * 0.71,
+                        padding: 15,
                     }}
                 >
                     <Text style={styles.appName}>L'ARCH</Text>
@@ -39,13 +39,25 @@ export default function HomeScreen({ navigation }) {
                 </View>
             </ImageBackground>
             <View style={{ padding: 20 }}>
-                <CustomTitle text="Adoption" font={32}></CustomTitle>
-                <CustomTitle text="Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur eux, les vendre ou les échanger."></CustomTitle>
+                <CustomTitle
+                    text="Adoption"
+                    fontWeight="bold"
+                    font={32}
+                ></CustomTitle>
+                <CustomTitle
+                    fontWeight="regular"
+                    text="Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur eux, les vendre ou les échanger."
+                ></CustomTitle>
             </View>
             <Image
                 style={styles.image}
                 source={require('../assets/img/box-kang.png')}
             ></Image>
+            <CustomBouton color="#F06D76">
+                <Text style={{ color: 'white' }}>EN SAVOIR PLUS</Text>
+            </CustomBouton>
+            <CustomTitle text="PACK EVENEMENTS" fontWeight="bold"></CustomTitle>
+
             <ScrollView horizontal={true}>
                 <View
                     style={{
@@ -103,14 +115,19 @@ export default function HomeScreen({ navigation }) {
                 </View>
             </ScrollView>
 
-            <CustomBouton>
-                <Text> Tout voir</Text>
+            <CustomBouton color="#4BC6B9">
+                <Text style={{ color: 'white' }}>EN SAVOIR PLUS</Text>
             </CustomBouton>
             <ImageBackground
                 style={styles.footer}
                 source={require('../assets/img/bg-dark.png')}
             >
-                <View>
+                <View
+                    style={{
+                        paddingTop: Dimensions.get('window').height * 0.4,
+                        paddingLeft: 15,
+                    }}
+                >
                     <CustomTitle
                         color="white"
                         text="$48594.458765"
@@ -121,6 +138,13 @@ export default function HomeScreen({ navigation }) {
                         text="Arch (ARH)"
                     ></CustomTitle>
                     <CustomTitle color="#1ED760" text="+7,5%"></CustomTitle>
+                    <View style={{ marginTop: 15 }}>
+                        <CustomBouton color="#F06D76">
+                            <Text style={{ color: 'white' }}>
+                                EN SAVOIR PLUS
+                            </Text>
+                        </CustomBouton>
+                    </View>
                 </View>
             </ImageBackground>
         </ScrollView>
