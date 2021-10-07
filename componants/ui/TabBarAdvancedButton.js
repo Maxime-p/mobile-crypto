@@ -10,7 +10,7 @@ export const TabBarAdvancedButton = ({...props}) => (
         <TouchableOpacity
             style={styles.button}
             onPress={props.onPress}>
-            <Box color='#FFF'/>
+            <Box color='#FFF' width={32} height={32}/>
         </TouchableOpacity>
     </View>
 );
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     },
     button: {
         top: -22.5,
+        flexDirection: "row",
         justifyContent: 'center',
         alignItems: 'center',
         width: 62,

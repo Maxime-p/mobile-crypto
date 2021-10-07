@@ -4,11 +4,13 @@ import {
     Image,
     StyleSheet,
     Text,
-    TouchableOpacity,
     Dimensions,
 } from 'react-native'
 import {useAssets} from "expo-asset";
 import {useFonts} from "expo-font";
+import CustomButton from "../componants/Button";
+import Import from "../componants/icons/Import";
+import Wallet from "../componants/icons/Wallet";
 
 export default function AuthScreen({ navigation }) {
     const [isAssetsLoaded] = useAssets([
@@ -40,12 +42,8 @@ export default function AuthScreen({ navigation }) {
                     :
                     <View>
                         <Text>Bienvenue sur l’Arch</Text>
-                        <TouchableOpacity style={styles.button} onPress={press}>
-                            <Text> IMPORTER SON PORTEFEUILLE </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.outlinedbutton} onPress={press}>
-                            <Text> CRÉER UN PORTEFEUILLE </Text>
-                        </TouchableOpacity>
+                        <CustomButton text={'Importer son portefeuille'} icon={<Import color={'#FFF'}/>} color={'#FFF'} bgColor={'#F06D76'} link={'App'} />
+                        <CustomButton outlined={true} text={'Créer un portefeuille'} icon={<Wallet color={'#071D48'}/>} color={'#071D48'} link={'App'} />
                     </View>
                 }
 
@@ -60,6 +58,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     image: {
+        width: Dimensions.get('window').width,
         flex: 1,
     },
 
@@ -68,12 +67,6 @@ const styles = StyleSheet.create({
         bottom: 20,
         width: Dimensions.get('window').width,
         paddingHorizontal: 20,
-    },
-    button: {
-        alignItems: 'center',
-        backgroundColor: '#F06D76',
-        padding: 10,
-        borderRadius: 8,
     },
     outlinedbutton: {
         borderRadius: 8,

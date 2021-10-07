@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#FAF9F6',
         width: Dimensions.get('window').width,
     },
     header: {
