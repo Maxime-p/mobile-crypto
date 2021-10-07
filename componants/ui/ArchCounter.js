@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 16,
         width: Dimensions.get('window').width,
-        marginTop: 5,
+        marginTop: 20,
     },
     nav: {
         width: Dimensions.get('window').width * 0.8,

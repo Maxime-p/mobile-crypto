@@ -7,114 +7,155 @@ import {
     Button,
     StyleSheet,
     Dimensions,
+    ImageBackground,
 } from 'react-native'
-
+import ArchCounter from '../componants/ui/ArchCounter'
 import Card from '../componants/ui/Card.js'
+import CustomTitle from '../componants/ui/Title.js'
+import CustomBouton from '../componants/Button.js'
 export default function HomeScreen({ navigation }) {
     return (
         <ScrollView style={styles.container}>
-            <View style={[styles.header]}>
-                <Text style={[styles.title]}>Notre projet</Text>
-                <Text style={[styles.subtitle]}>
-                    Adoptez votre propre animal en voix de disparition et
-                    participez à la protection de nombreuses espèces dans le
-                    monde.
-                </Text>
-
-                {/* <Button color="#fff" title="En savoir plus"></Button> */}
+            <View style={{ backgroundColor: '#4BC6B9', height: 60 }}>
+                <ArchCounter />
             </View>
 
-            <View style={[styles.content]}>
-                <Text style={[styles.sectionTitle]}>Adoption</Text>
-                <Text style={[styles.mainText]}>
-                    Comment avoir votre propre animal ? Achetez une boîte et
-                    regardez quel animal vous allez pouvoir adopter. Commun ou
-                    bien légendaire, kangourou ou bien rhinocéros vous pouvez en
-                    apprendre plus sur eux, les vendre ou les échanger.
-                </Text>
-                <Image
-                    style={styles.image}
-                    source={{
-                        uri: 'https://placekitten.com/600/300',
+            <ImageBackground
+                style={styles.header}
+                source={require('../assets/img/home-top.png')}
+            >
+                <View
+                    style={{
+                        width: Dimensions.get('window').width * 0.68,
+                        padding: 10,
                     }}
-                />
-                <Button style="" title="en savoir plus">
-                    {' '}
-                </Button>
-                <Text style={[styles.sectionTitle]}>Pack evenement</Text>
+                >
+                    <Text style={styles.appName}>L'ARCH</Text>
+                    <Text style={{ color: 'white', textAlign: 'justify' }}>
+                        Adoptez votre propre animal en voie de disparition et
+                        participez à la protection de nombreuses espèces dans le
+                        monde.
+                    </Text>
+                </View>
+            </ImageBackground>
+            <View style={{ padding: 20 }}>
+                <CustomTitle text="Adoption" font={32}></CustomTitle>
+                <CustomTitle text="Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur eux, les vendre ou les échanger."></CustomTitle>
             </View>
-            <View horizontal style={[styles.flex]}>
-                <Card text="Box Halloween"></Card>
-                <Card text="Box LPO ui"></Card>
-            </View>
+            <Image
+                style={styles.image}
+                source={require('../assets/img/box-kang.png')}
+            ></Image>
+            <ScrollView horizontal={true}>
+                <View
+                    style={{
+                        width: Dimensions.get('window').width * 0.5,
+                        flex: 1,
+                    }}
+                >
+                    <Image
+                        style={styles.packimage}
+                        source={require('../assets/img/pack-hallow.png')}
+                    ></Image>
+                    <Text style={{ textAlign: 'center' }}>Pack Halloween </Text>
+                    <CustomBouton
+                        outlined
+                        style={{ width: Dimensions.get('window').width * 0.2 }}
+                    >
+                        <Text>200</Text>
+                    </CustomBouton>
+                </View>
+                <View
+                    style={{
+                        width: Dimensions.get('window').width * 0.5,
+                        flex: 1,
+                    }}
+                >
+                    <Image
+                        style={styles.packimage}
+                        source={require('../assets/img/pack-asso.png')}
+                    ></Image>
+                    <Text style={{ textAlign: 'center' }}>Pack Halloween </Text>
+                    <CustomBouton
+                        outlined
+                        style={{ width: Dimensions.get('window').width * 0.2 }}
+                    >
+                        <Text>200</Text>
+                    </CustomBouton>
+                </View>
+                <View
+                    style={{
+                        width: Dimensions.get('window').width * 0.5,
+                        flex: 1,
+                    }}
+                >
+                    <Image
+                        style={styles.packimage}
+                        source={require('../assets/img/pack-hallow.png')}
+                    ></Image>
+                    <Text style={{ textAlign: 'center' }}>Pack Halloween </Text>
+                    <CustomBouton
+                        outlined
+                        style={{ width: Dimensions.get('window').width * 0.2 }}
+                    >
+                        <Text>200</Text>
+                    </CustomBouton>
+                </View>
+            </ScrollView>
 
-            <View style={[styles.footer]}>
-                <Text>$48594.458765</Text>
-                <Text>Arch (ARH)</Text>
-                <Text>+58%</Text>
-            </View>
+            <CustomBouton>
+                <Text> Tout voir</Text>
+            </CustomBouton>
+            <ImageBackground
+                style={styles.footer}
+                source={require('../assets/img/bg-dark.png')}
+            >
+                <View>
+                    <CustomTitle
+                        color="white"
+                        text="$48594.458765"
+                    ></CustomTitle>
+                    <CustomTitle
+                        color="white"
+                        font={28}
+                        text="Arch (ARH)"
+                    ></CustomTitle>
+                    <CustomTitle color="#1ED760" text="+7,5%"></CustomTitle>
+                </View>
+            </ImageBackground>
         </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
+    appName: {
+        color: 'white',
+        fontSize: 70,
+        fontWeight: 'bold',
+    },
+
     container: {
         flex: 1,
+        backgroundColor: '#ffffff',
+        width: Dimensions.get('window').width,
     },
     header: {
-        borderBottomEndRadius: 16,
-        borderBottomStartRadius: 16,
-        backgroundColor: 'red',
-
+        backgroundColor: '#4BC6B9',
         height: Dimensions.get('window').height * 0.5,
         width: Dimensions.get('window').width,
-        paddingTop: Dimensions.get('window').height * 0.3,
-    },
-    footer: {
-        marginTop: Dimensions.get('window').height * 0.04,
-        height: Dimensions.get('window').height * 0.2,
-        paddingTop: Dimensions.get('window').height * 0.3,
-
-        backgroundColor: 'red',
-        borderTopEndRadius: 16,
-        borderTopStartRadius: 16,
-    },
-    flex: {
-        flex: 1,
-        justifyContent: 'space-around',
-        backgroundColor: '#ecf0f1',
-        padding: 8,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    title: {
-        marginLeft: 15,
-        marginRight: 15,
-        color: '#fff',
-        fontSize: 28,
-    },
-    subtitle: {
-        marginLeft: 15,
-        marginRight: 15,
-        paddingTop: Dimensions.get('window').height * 0.02,
-
-        color: '#fff',
-    },
-    content: {
-        marginLeft: 15,
-        marginRight: 15,
-    },
-    sectionTitle: {
         paddingTop: Dimensions.get('window').height * 0.05,
-        fontSize: 28,
     },
     image: {
-        marginTop: 20,
-        height: Dimensions.get('window').height * 0.2,
-        borderRadius: 16,
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height * 0.5,
     },
-    mainText: {
-        fontSize: 12,
-        textAlign: 'justify',
+    packimage: {
+        width: Dimensions.get('window').width * 0.5,
+        height: Dimensions.get('window').height * 0.2,
+        padding: 10,
+    },
+    footer: {
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height * 0.8,
     },
 })
