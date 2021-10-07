@@ -1,26 +1,19 @@
 import React from 'react'
-import { Button, StyleSheet } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-const Stack = createNativeStackNavigator()
+export default function CustomButton({ outlined, link, children }) {
+    const navigation = useNavigation()
 
-export default function CustomButton({ outlined, text, link }) {
-    if (outlined) {
-        return (
-            <Button
-                title={text}
-                type="outline"
-                onPress={() => navigation.navigate('Home')}
-            />
-        )
-    } else {
-        return (
-            <Button title={text} onPress={() => navigation.navigate('Home')} />
-        )
+    const press = () => {
+        navigation.navigate(link)
     }
 
-    //   <Button title={text} onPress={() => navigation.push({ link })} />
+    return (
+        <TouchableOpacity onPress={press} style={styles.button}>
+            {children}
+        </TouchableOpacity>
+    )
 }
 
 const styles = StyleSheet.create({
