@@ -7,10 +7,10 @@ import ProjectScreen from "../screens/ProjectScreen";
 import AdoptionScreen from "../screens/AdoptionScreen";
 import ShelterScreen from "../screens/ShelterScreen";
 
-import House from './icons/House.js';
-import Info from "./icons/Info";
-import Shelter from "./icons/Shelter";
-import Wallet from "./icons/Wallet";
+import House from '../assets/icons/House.js';
+import Info from "../assets/icons/Info";
+import Shelter from "../assets/icons/Shelter";
+import Wallet from "../assets/icons/Wallet";
 import {TabBarAdvancedButton} from "./ui/TabBarAdvancedButton";
 import WalletScreen from "../screens/WalletScreen";
 
