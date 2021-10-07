@@ -9,8 +9,8 @@ import ShelterScreen from "../screens/ShelterScreen";
 
 import House from './icons/House.js';
 import Info from "./icons/Info";
-import User from "./icons/User";
-import Coin from "./icons/Coin";
+import Shelter from "./icons/Shelter";
+import Wallet from "./icons/Wallet";
 import {TabBarAdvancedButton} from "./ui/TabBarAdvancedButton";
 import WalletScreen from "../screens/WalletScreen";
 
@@ -34,7 +34,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <House/>
+                            <House color='#6D697C'/>
                         )
                     }}
                 />
@@ -44,7 +44,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Info/>
+                            <Info color='#6D697C'/>
                         )
                     }}
                 />
@@ -64,7 +64,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <User/>
+                            <Shelter color='#6D697C'/>
                         )
                     }}
                 />
@@ -74,7 +74,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Coin/>
+                            <Wallet color='#6D697C'/>
                         )
                     }}
                 />

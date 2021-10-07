@@ -4,27 +4,40 @@ import {
     Image,
     StyleSheet,
     Text,
-    Button,
     TouchableOpacity,
     Dimensions,
 } from 'react-native'
-import image from '../assets/auth.png'
+import {useAssets} from "expo-asset";
+import {useFonts} from "expo-font";
 
 export default function AuthScreen({ navigation }) {
+    const [isAssetsLoaded] = useAssets([
+        require('../assets/img/auth.png')
+    ])
+
+    const [isFontsLoaded] = useFonts({
+        Raleway: require('../assets/fonts/Raleway/Raleway-Black.ttf'),
+        HelveticaNeue: require('../assets/fonts/HelveticaNeue/HelveticaNeue.ttf'),
+    });
+
+
     const press = () => {
         navigation.navigate('App')
     }
     return (
         <View style={styles.container}>
-            <Image source={image} style={image} />
+            <Image source={require('../assets/img/auth.png')} style={styles.image} />
             <View style={styles.content}>
-                <Text>Bienvenue sur l’Arch</Text>
-                <TouchableOpacity style={styles.button} onPress={press}>
-                    <Text> IMPORTER SON PORTEFEUILLE </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.outlinedbutton} onPress={press}>
-                    <Text> CRÉER UN PORTEFEUILLE </Text>
-                </TouchableOpacity>
+
+                <View>
+                    <Text>Bienvenue sur l’Arch</Text>
+                    <TouchableOpacity style={styles.button} onPress={press}>
+                        <Text> IMPORTER SON PORTEFEUILLE </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.outlinedbutton} onPress={press}>
+                        <Text> CRÉER UN PORTEFEUILLE </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )
@@ -53,7 +66,6 @@ const styles = StyleSheet.create({
     },
     outlinedbutton: {
         borderRadius: 8,
-
         alignItems: 'center',
         padding: 10,
         borderWidth: 1,

@@ -10,7 +10,7 @@ export const TabBarAdvancedButton = ({...props}) => (
         <TouchableOpacity
             style={styles.button}
             onPress={props.onPress}>
-            <Box/>
+            <Box color='#FFF'/>
         </TouchableOpacity>
     </View>
 );
