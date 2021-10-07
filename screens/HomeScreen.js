@@ -12,7 +12,7 @@ import {
 import Card from '../componants/ui/Card.js'
 export default function HomeScreen({ navigation }) {
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <View style={[styles.header]}>
                 <Text style={[styles.title]}>Notre projet</Text>
                 <Text style={[styles.subtitle]}>
@@ -58,6 +58,9 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     header: {
         borderBottomEndRadius: 16,
         borderBottomStartRadius: 16,
@@ -100,7 +103,6 @@ const styles = StyleSheet.create({
     content: {
         marginLeft: 15,
         marginRight: 15,
-        width: Dimensions.get('window').width,
     },
     sectionTitle: {
         paddingTop: Dimensions.get('window').height * 0.05,

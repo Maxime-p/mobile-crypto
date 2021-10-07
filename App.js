@@ -15,12 +15,11 @@ import AuthScreen from './screens/AuthScreen'
 const Stack = createNativeStackNavigator()
 
 export default function App() {
-    const [isAuth, setIsAuth] = useState(false)
 
     return (
         <SafeAreaView style={styles.container}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName={isAuth ? 'App' : 'Auth'}>
+                <Stack.Navigator initialRouteName={'Auth'}>
                     <Stack.Screen
                         name="Auth"
                         component={AuthScreen}
