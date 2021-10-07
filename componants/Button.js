@@ -1,28 +1,33 @@
 import React from 'react'
-import { TouchableOpacity, Text, StyleSheet } from 'react-native'
+import { TouchableOpacity, Text, View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 export default function CustomButton(
-    { outlined, link, color, children } = { outlined: false, color: 'white' }
+    { text, icon, outlined, link, color, bgColor } = { icon: false, outlined: false, color: 'black', bgColor: 'white' }
 ) {
     const navigation = useNavigation()
 
-    function getoutStyle(outlined, color) {
+    function getOutStyle(outlined, color, bgColor) {
+        let style = {}
+
         if (outlined) {
-            return {
-                borderRadius: 8,
-                alignItems: 'center',
-                padding: 10,
-                borderWidth: 1,
+            style = {
+                borderWidth: 2,
                 borderColor: color,
             }
         } else {
-            return {
-                alignItems: 'center',
-                backgroundColor: color,
-                padding: 10,
-                borderRadius: 8,
+            style = {
+                backgroundColor: bgColor,
             }
+        }
+
+        return {
+            ...style,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 8,
+            padding: 16,
         }
     }
 
@@ -31,10 +36,24 @@ export default function CustomButton(
     }
 
     return (
-        <TouchableOpacity onPress={press} style={getoutStyle(outlined, color)}>
-            {children}
+        <TouchableOpacity onPress={press} style={getOutStyle(outlined, color, bgColor)}>
+            <View style={styles.icon}>
+                {icon}
+            </View>
+            <Text style={{...styles.text, color}}>{text}</Text>
         </TouchableOpacity>
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    icon: {
+        justifyContent: "center",
+        alignItems: "center",
+        width: 24,
+        height: 24,
+        marginRight: 8
+    },
+    text: {
+        textTransform: "uppercase"
+    }
+})

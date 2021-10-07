@@ -34,7 +34,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <House color='#6D697C'/>
+                            <House color='#6D697C' width={32} height={32}/>
                         )
                     }}
                 />
@@ -44,7 +44,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Info color='#6D697C'/>
+                            <Info color='#6D697C' width={32} height={32}/>
                         )
                     }}
                 />
@@ -64,7 +64,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Shelter color='#6D697C'/>
+                            <Shelter color='#6D697C' width={32} height={32}/>
                         )
                     }}
                 />
@@ -74,7 +74,7 @@ export default function Nav({state}) {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Wallet color='#6D697C'/>
+                            <Wallet color='#6D697C' width={32} height={32}/>
                         )
                     }}
                 />
