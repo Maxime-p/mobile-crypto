@@ -14,11 +14,12 @@ import CustomText from '../componants/ui/CustomText'
 import CustomBouton from '../componants/ui/CustomButton'
 import Coin from '../assets/icons/Coin'
 import Info from '../assets/icons/Info'
+import Box from '../assets/icons/Box'
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
     return (
         <ScrollView style={styles.container}>
-            <View style={{ backgroundColor: '#4BC6B9', height: 40 }}>
+            <View style={{ backgroundColor: '#4BC6B9', height: 60 }}>
                 <ArchCounter />
             </View>
             <ImageBackground
@@ -27,8 +28,8 @@ export default function HomeScreen({ navigation }) {
             >
                 <View
                     style={{
-                        width: Dimensions.get('window').width * 0.71,
-                        padding: 15,
+                        width: Dimensions.get('window').width * 0.8,
+                        paddingHorizontal: 20,
                     }}
                 >
                     <CustomText
@@ -40,8 +41,9 @@ export default function HomeScreen({ navigation }) {
                         L'arch
                     </CustomText>
                     <CustomText
-                        style={{ paddingVertical: 5 }}
+                        style={{ paddingVertical: 10, paddingRight: 30 }}
                         color={'white'}
+                        font={16}
                         align={'justify'}
                     >
                         Adoptez votre propre animal en voie de disparition et
@@ -166,19 +168,25 @@ export default function HomeScreen({ navigation }) {
                     />
                 </View>
             </ScrollView>
-
-            <CustomBouton color="#4BC6B9">
-                <CustomText color={'white'} uppercase>
-                    En savoir plus
-                </CustomText>
-            </CustomBouton>
+            <CustomBouton
+                style={{
+                    height: Dimensions.get('window').height * 0.08,
+                    textAlign: 'center',
+                    marginTop: Dimensions.get('window').height * 0.03,
+                    marginHorizontal: 20,
+                }}
+                color="white"
+                bgColor="#4BC6B9"
+                text="EN SAVOIR PLUS"
+                icon={<Box color={'white'} />}
+            ></CustomBouton>
             <ImageBackground
                 style={styles.footer}
                 source={require('../assets/img/bg-dark.png')}
             >
                 <View
                     style={{
-                        paddingTop: Dimensions.get('window').height * 0.35,
+                        paddingTop: Dimensions.get('window').height * 0.2,
                         paddingHorizontal: 20,
                     }}
                 >
@@ -214,7 +222,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#4BC6B9',
         height: Dimensions.get('window').height * 0.5,
         width: Dimensions.get('window').width,
-        paddingTop: Dimensions.get('window').height * 0.05,
     },
     image: {
         flex: 1,
@@ -236,7 +243,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height * 0.8,
+        height: Dimensions.get('window').height * 0.5,
     },
     boxButton: {
         height: Dimensions.get('window').height * 0.06,
