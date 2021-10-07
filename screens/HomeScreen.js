@@ -43,10 +43,7 @@ export default function HomeScreen({ navigation }) {
                     fontWeight="bold"
                     font={32}
                 ></CustomTitle>
-                <CustomTitle
-                    fontWeight="regular"
-                    text="Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur eux, les vendre ou les échanger."
-                ></CustomTitle>
+                <CustomTitle text="Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur eux, les vendre ou les échanger."></CustomTitle>
             </View>
             <Image
                 style={styles.image}
