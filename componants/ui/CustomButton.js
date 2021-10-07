@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 export default function CustomButton(
-    { text, icon, outlined, link, color, bgColor } = { icon: false, outlined: false, color: 'black', bgColor: 'white' }
+    { text, icon, outlined, link, color, bgColor, style } = { icon: false, outlined: false, color: 'black', bgColor: 'white' }
 ) {
     const navigation = useNavigation()
 
@@ -36,7 +36,7 @@ export default function CustomButton(
     }
 
     return (
-        <TouchableOpacity onPress={press} style={getOutStyle(outlined, color, bgColor)}>
+        <TouchableOpacity onPress={press} style={{...getOutStyle(outlined, color, bgColor), ...style}} >
             <View style={styles.icon}>
                 {icon}
             </View>

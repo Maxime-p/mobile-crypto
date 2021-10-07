@@ -10,101 +10,80 @@ import {
     ImageBackground,
 } from 'react-native'
 import ArchCounter from '../componants/ui/ArchCounter'
-import CustomTitle from '../componants/ui/Title.js'
-import CustomBouton from '../componants/Button.js'
-export default function HomeScreen({ navigation }) {
+import CustomText from '../componants/ui/CustomText'
+import CustomBouton from '../componants/ui/CustomButton'
+
+export default function HomeScreen({navigation}) {
     return (
         <ScrollView style={styles.container}>
-            <View style={{ backgroundColor: '#4BC6B9', height: 40 }}>
-                <ArchCounter />
+            <View style={{backgroundColor: '#4BC6B9', height: 40}}>
+                <ArchCounter/>
             </View>
-
-            <ImageBackground
-                style={styles.header}
-                source={require('../assets/img/home-top.png')}
-            >
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.71,
-                        padding: 15,
-                    }}
-                >
-                    <Text style={styles.appName}>L'ARCH</Text>
-                    <Text style={{ color: 'white', textAlign: 'justify' }}>
+            <ImageBackground style={styles.header} source={require('../assets/img/home-top.png')}>
+                <View style={{width: Dimensions.get('window').width * 0.71, padding: 15}}>
+                    <CustomText font={70} color={'white'} fontWeight={'bold'} uppercase>L'arch</CustomText>
+                    <CustomText color={'white'} align={'justify'}>
                         Adoptez votre propre animal en voie de disparition et
                         participez à la protection de nombreuses espèces dans le
                         monde.
-                    </Text>
+                    </CustomText>
                 </View>
             </ImageBackground>
-            <View style={{ padding: 20 }}>
-                <CustomTitle
-                    text="Adoption"
-                    fontWeight="bold"
-                    font={32}
-                ></CustomTitle>
-                <CustomTitle text="Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur eux, les vendre ou les échanger."></CustomTitle>
+            <View style={{padding: 20}}>
+                <CustomText fontWeight="bold" font={32}>Adoption</CustomText>
+                <CustomText>
+                    Comment avoir votre propre animal ? Achetez une boîte et regardez quel animal vous allez pouvoir
+                    adopter. Commun ou bien légendaire, kangourou ou bien rhinocéros vous pouvez en apprendre plus sur
+                    eux, les vendre ou les échanger.
+                </CustomText>
             </View>
             <Image
                 style={styles.image}
                 source={require('../assets/img/box-kang.png')}
-            ></Image>
+            />
             <CustomBouton color="#F06D76">
-                <Text style={{ color: 'white' }}>EN SAVOIR PLUS</Text>
+                <CustomText color={'white'} uppercase>En savoir plus</CustomText>
             </CustomBouton>
-            <CustomTitle text="PACK EVENEMENTS" fontWeight="bold"></CustomTitle>
+            <CustomText fontWeight="bold" uppercase>
+                Pack événements
+            </CustomText>
 
             <ScrollView horizontal={true}>
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.5,
-                        flex: 1,
-                    }}
-                >
+                <View style={{width: Dimensions.get('window').width * 0.5, flex: 1}}>
                     <Image
                         style={styles.packimage}
                         source={require('../assets/img/pack-hallow.png')}
-                    ></Image>
-                    <Text style={{ textAlign: 'center' }}>Pack Halloween </Text>
+                    />
+                    <CustomText align={'center'}>Pack Halloween</CustomText>
                     <CustomBouton
                         outlined
-                        style={{ width: Dimensions.get('window').width * 0.2 }}
+                        style={{width: Dimensions.get('window').width * 0.2}}
                     >
                         <Text>200</Text>
                     </CustomBouton>
                 </View>
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.5,
-                        flex: 1,
-                    }}
-                >
+                <View style={{width: Dimensions.get('window').width * 0.5, flex: 1}}>
                     <Image
                         style={styles.packimage}
                         source={require('../assets/img/pack-asso.png')}
-                    ></Image>
-                    <Text style={{ textAlign: 'center' }}>Pack Halloween </Text>
+                    />
+                    <CustomText align={'center'}>Pack Halloween</CustomText>
                     <CustomBouton
                         outlined
-                        style={{ width: Dimensions.get('window').width * 0.2 }}
+                        style={{width: Dimensions.get('window').width * 0.2}}
                     >
                         <Text>200</Text>
                     </CustomBouton>
                 </View>
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.5,
-                        flex: 1,
-                    }}
-                >
+                <View style={{width: Dimensions.get('window').width * 0.5, flex: 1}}>
                     <Image
                         style={styles.packimage}
                         source={require('../assets/img/pack-hallow.png')}
-                    ></Image>
-                    <Text style={{ textAlign: 'center' }}>Pack Halloween </Text>
+                    />
+                    <CustomText align={'center'}>Pack Halloween</CustomText>
                     <CustomBouton
                         outlined
-                        style={{ width: Dimensions.get('window').width * 0.2 }}
+                        style={{width: Dimensions.get('window').width * 0.2}}
                     >
                         <Text>200</Text>
                     </CustomBouton>
@@ -112,7 +91,7 @@ export default function HomeScreen({ navigation }) {
             </ScrollView>
 
             <CustomBouton color="#4BC6B9">
-                <Text style={{ color: 'white' }}>EN SAVOIR PLUS</Text>
+                <CustomText color={'white'} uppercase>En savoir plus</CustomText>
             </CustomBouton>
             <ImageBackground
                 style={styles.footer}
@@ -124,21 +103,12 @@ export default function HomeScreen({ navigation }) {
                         paddingLeft: 15,
                     }}
                 >
-                    <CustomTitle
-                        color="white"
-                        text="$48594.458765"
-                    ></CustomTitle>
-                    <CustomTitle
-                        color="white"
-                        font={28}
-                        text="Arch (ARH)"
-                    ></CustomTitle>
-                    <CustomTitle color="#1ED760" text="+7,5%"></CustomTitle>
-                    <View style={{ marginTop: 15 }}>
+                    <CustomText color="white">$48594.458765</CustomText>
+                    <CustomText color="white" font={28}>Arch (ARH)</CustomText>
+                    <CustomText color="#1ED760">+7,5%</CustomText>
+                    <View style={{marginTop: 15}}>
                         <CustomBouton color="#F06D76">
-                            <Text style={{ color: 'white' }}>
-                                EN SAVOIR PLUS
-                            </Text>
+                            <CustomText color={'white'} uppercase>En savoir plus</CustomText>
                         </CustomBouton>
                     </View>
                 </View>
@@ -148,12 +118,6 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    appName: {
-        color: 'white',
-        fontSize: 70,
-        fontWeight: 'bold',
-    },
-
     container: {
         flex: 1,
         backgroundColor: '#FAF9F6',

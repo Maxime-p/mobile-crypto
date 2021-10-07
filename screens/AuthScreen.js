@@ -8,13 +8,15 @@ import {
 } from 'react-native'
 import {useAssets} from "expo-asset";
 import {useFonts} from "expo-font";
-import CustomButton from "../componants/Button";
+import CustomButton from "../componants/ui/CustomButton";
 import Import from "../assets/icons/Import";
 import Wallet from "../assets/icons/Wallet";
+import CustomText from "../componants/ui/CustomText";
 
 export default function AuthScreen({ navigation }) {
     const [isAssetsLoaded] = useAssets([
         require('../assets/img/auth.png'),
+        require('../assets/img/loader.gif'),
         require('../assets/img/bg-dark.png'),
         require('../assets/img/box-kang.png'),
         require('../assets/img/home-top.png'),
@@ -29,24 +31,25 @@ export default function AuthScreen({ navigation }) {
         HelveticaNeueBold: require('../assets/fonts/HelveticaNeue/HelveticaNeue-Bold.ttf'),
     });
 
-
-    const press = () => {
-        navigation.navigate('App')
+    const Loader = () => {
+        if (!isAssetsLoaded && !isFontsLoaded){
+            return (<Image source={require('../assets/img/loader.gif')} />)
+        }else{
+            return (
+                <View>
+                    <CustomText font={32} fontWeight={'bold'} align={'center'}>Bienvenue sur l’Arch</CustomText>
+                    <CustomButton text={'Importer son portefeuille'} icon={<Import color={'#FFF'}/>} color={'#FFF'} bgColor={'#F06D76'} link={'App'} style={styles.middleButton} />
+                    <CustomButton outlined={true} text={'Créer un portefeuille'} icon={<Wallet color={'#071D48'}/>} color={'#071D48'} link={'App'} />
+                </View>
+            )
+        }
     }
+
     return (
         <View style={styles.container}>
             <Image source={require('../assets/img/auth.png')} style={styles.image} />
             <View style={styles.content}>
-                {!isAssetsLoaded && !isFontsLoaded ?
-                    <Text>Loading</Text>
-                    :
-                    <View>
-                        <Text>Bienvenue sur l’Arch</Text>
-                        <CustomButton text={'Importer son portefeuille'} icon={<Import color={'#FFF'}/>} color={'#FFF'} bgColor={'#F06D76'} link={'App'} />
-                        <CustomButton outlined={true} text={'Créer un portefeuille'} icon={<Wallet color={'#071D48'}/>} color={'#071D48'} link={'App'} />
-                    </View>
-                }
-
+                <Loader/>
             </View>
         </View>
     )
@@ -61,18 +64,14 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width,
         flex: 1,
     },
-
     content: {
         position: 'absolute',
         bottom: 20,
         width: Dimensions.get('window').width,
         paddingHorizontal: 20,
     },
-    outlinedbutton: {
-        borderRadius: 8,
-        alignItems: 'center',
-        padding: 10,
-        borderWidth: 1,
-        borderColor: '#071D48',
-    },
+    middleButton: {
+        marginTop: 40,
+        marginBottom: 16
+    }
 })
