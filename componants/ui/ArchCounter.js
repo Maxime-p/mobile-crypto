@@ -18,11 +18,10 @@ export default function ArchCounter({ text }) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 16,
         width: Dimensions.get('window').width,
+        marginTop: 5,
     },
     nav: {
         width: Dimensions.get('window').width * 0.8,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import CustomModal from '../componants/Modal.js'
-import CustomChart from '../componants/Chart.js'
+import CustomBarChart from '../componants/Chart.js'
 
 export default function ShelterScreen() {
     const [modalVisibility, setModalVisibility] = useState(false)
@@ -18,7 +18,7 @@ export default function ShelterScreen() {
             </TouchableOpacity>
             {modalVisibility && (
                 <CustomModal handleSwipeDown={handleSwipeDown}>
-                    <CustomChart></CustomChart>
+                    <CustomBarChart></CustomBarChart>
                 </CustomModal>
             )}
         </View>
