@@ -8,7 +8,6 @@ export default function CustomButton(
     const navigation = useNavigation()
 
     function getoutStyle(outlined, color) {
-        console.log(outlined, color)
         if (outlined) {
             return {
                 borderRadius: 8,
