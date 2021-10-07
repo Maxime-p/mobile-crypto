@@ -35,9 +35,4 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 16,
         alignItems: 'center',
     },
-
-    modalText: {
-        marginBottom: 15,
-        textAlign: 'center',
-    },
 })

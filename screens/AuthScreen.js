@@ -22,6 +22,7 @@ export default function AuthScreen({ navigation }) {
         require('../assets/img/home-top.png'),
         require('../assets/img/pack-asso.png'),
         require('../assets/img/pack-hallow.png'),
+        require('../assets/img/bg-lines.png'),
     ])
 
     const [isFontsLoaded] = useFonts({
@@ -32,7 +33,7 @@ export default function AuthScreen({ navigation }) {
     });
 
     const Loader = () => {
-        if (!isAssetsLoaded && !isFontsLoaded){
+        if (!isAssetsLoaded || !isFontsLoaded){
             return (<Image source={require('../assets/img/loader.gif')} />)
         }else{
             return (
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         width: Dimensions.get('window').width,
+        alignItems: "center",
+        paddingHorizontal: 20,
     },
     middleButton: {
         marginTop: 40,
