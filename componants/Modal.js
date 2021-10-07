@@ -1,75 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from 'react-native'
-
-export default function CustomModal({ textButton, mainText }) {
-    const [modalVisibility, setModalVisibility] = useState(true)
-    useEffect(() => {
-        setModalVisibility(true)
-    }, [])
+import {
+    Alert,
+    Modal,
+    StyleSheet,
+    Text,
+    Pressable,
+    View,
+    Dimensions,
+} from 'react-native'
+import GestureRecognizer from 'react-native-swipe-gestures'
+export default function CustomModal({ children, handleSwipeDown }) {
     return (
-        <View style={styles.centeredView}>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisibility}
-                onRequestClose={() => {
-                    modalVisibility(!modalVisibility)
-                }}
-            >
+        <GestureRecognizer style={{ flex: 1 }} onSwipeDown={handleSwipeDown}>
+            <Modal animationType="slide" transparent={true} visible={true}>
                 <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <Text style={styles.modalText}>{mainText}</Text>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisibility(false)}
-                        >
-                            <Text style={styles.textStyle}>{textButton}</Text>
-                        </Pressable>
-                    </View>
+                    <View style={styles.modalView}>{children}</View>
                 </View>
             </Modal>
-        </View>
+        </GestureRecognizer>
     )
 }
 
 const styles = StyleSheet.create({
     centeredView: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
+        justifyContent: 'flex-end',
+        alignContent: 'flex-end',
     },
     modalView: {
-        margin: 20,
         backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 35,
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height * 0.9,
+        borderTopEndRadius: 16,
+        borderTopStartRadius: 16,
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
     },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-    },
-    buttonOpen: {
-        backgroundColor: '#F194FF',
-    },
-    buttonClose: {
-        backgroundColor: '#2196F3',
-    },
-    textStyle: {
-        color: 'white',
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
+
     modalText: {
         marginBottom: 15,
         textAlign: 'center',
