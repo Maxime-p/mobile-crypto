@@ -13,7 +13,7 @@ import ArchCounter from '../componants/ui/ArchCounter'
 import CustomText from '../componants/ui/CustomText'
 import CustomBouton from '../componants/ui/CustomButton'
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen() {
     return (
         <ScrollView style={styles.container}>
             <View style={{backgroundColor: '#4BC6B9', height: 40}}>

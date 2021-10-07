@@ -38,7 +38,7 @@ export default function AuthScreen({ navigation }) {
             return (
                 <View>
                     <CustomText font={32} fontWeight={'bold'} align={'center'}>Bienvenue sur l’Arch</CustomText>
-                    <CustomButton text={'Importer son portefeuille'} icon={<Import color={'#FFF'}/>} color={'#FFF'} bgColor={'#F06D76'} link={'App'} style={styles.middleButton} />
+                    <CustomButton text={'Importer un portefeuille'} icon={<Import color={'#FFF'}/>} color={'#FFF'} bgColor={'#F06D76'} link={'App'} style={styles.middleButton} />
                     <CustomButton outlined={true} text={'Créer un portefeuille'} icon={<Wallet color={'#071D48'}/>} color={'#071D48'} link={'App'} />
                 </View>
             )
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         width: Dimensions.get('window').width,
-        paddingHorizontal: 20,
     },
     middleButton: {
         marginTop: 40,

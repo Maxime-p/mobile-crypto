@@ -17,7 +17,7 @@ import WalletScreen from "../screens/WalletScreen";
 
 const BottomBar = createBottomTabNavigator();
 
-export default function Nav({state}) {
+export default function Nav() {
     return (
         <View style={styles.container}>
             <BottomBar.Navigator
