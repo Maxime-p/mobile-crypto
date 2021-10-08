@@ -9,6 +9,7 @@ import {
     TouchableOpacity,
     Modal,
     TouchableWithoutFeedback,
+    TouchableHighlight
 } from 'react-native'
 import CustomText from '../componants/ui/CustomText'
 import BlackScreen from '../componants/ui/BlackScreen.js'
@@ -200,7 +201,7 @@ export default function WalletScreen() {
                                                     font={14}
                                                     fontWeight="bold"
                                                 >
-                                                    Vous payez
+                                                    Vous recevez
                                                 </CustomText>
                                                 <CustomText
                                                     color="white"
@@ -212,7 +213,7 @@ export default function WalletScreen() {
                                                     color="white"
                                                     font={12}
                                                 >
-                                                    Solde: 13.27 ETH
+                                                    Solde: 654 ARH
                                                 </CustomText>
                                             </View>
                                             <CustomText
@@ -220,14 +221,15 @@ export default function WalletScreen() {
                                                 font={28}
                                                 fontWeight="bold"
                                             >
-                                                ETH
+                                                ARH
                                             </CustomText>
                                         </View>
                                         {/* C'est bon, c'est sa fin */}
                                         <CustomText
                                             font={20}
-                                            fontWeight={'500'}
+                                            fontWeight={'700'}
                                             align={'center'}
+                                            style={{marginTop: 16}}
                                         >
                                             1 ETH ≈ 272.63 ARC{' '}
                                         </CustomText>
@@ -239,6 +241,7 @@ export default function WalletScreen() {
                                             icon={<Swap color={'white'} />}
                                         />
                                     </View>
+                                    <Image style={styles.swapButton} source={require('../assets/img/Bouton_swap.png')} />
                                 </View>
                             </Modal>
                         </GestureRecognizer>
@@ -248,6 +251,33 @@ export default function WalletScreen() {
                 <CustomText font={14} fontWeight={'700'} uppercase>
                     Évolution de sa valeur
                 </CustomText>
+                <View style={styles.value}>
+                    <TouchableHighlight>
+                        <CustomText color={"#FFF"} style={styles.actif}>
+                            1D
+                        </CustomText>
+                    </TouchableHighlight>
+                    <TouchableHighlight>
+                        <CustomText color={"#FFF"}>
+                            7D
+                        </CustomText>
+                    </TouchableHighlight>
+                    <TouchableHighlight>
+                        <CustomText color={"#FFF"}>
+                            1M
+                        </CustomText>
+                    </TouchableHighlight>
+                    <TouchableHighlight>
+                        <CustomText color={"#FFF"}>
+                            3M
+                        </CustomText>
+                    </TouchableHighlight>
+                    <TouchableHighlight>
+                        <CustomText color={"#FFF"}>
+                            1Y
+                        </CustomText>
+                    </TouchableHighlight>
+                </View>
                 <CustomText font={14} fontWeight={'500'} color={'#6D697C'}>
                     Prix de L’Arch (ARH) en $
                 </CustomText>
@@ -349,14 +379,38 @@ const styles = StyleSheet.create({
     },
     swap: {
         marginTop: 32,
+        marginBottom: 32
     },
     convertView: {
         backgroundColor: '#4BC6B9',
         borderRadius: 8,
+        marginTop: 16,
         padding: 20,
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    value: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: "#4BC6B9",
+        marginVertical: 10,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderRadius: 8
+    },
+    actif: {
+        color: "#F06D76",
+        backgroundColor: "#FFF",
+        padding: 6,
+        borderRadius: 8
+    },
+    swapButton: {
+        position: "absolute",
+        bottom: Dimensions.get("window").height * 0.226,
+        right: -20,
+        transform: [{ scale: 0.7 }]
+    }
 })
