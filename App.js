@@ -21,7 +21,7 @@ export default function App() {
             <NavigationContainer>
                 <Stack.Navigator initialRouteName={'Auth'}>
                     <Stack.Screen
-                        name="Discover"
+                        name="Retour"
                         component={DiscoverScreen}
                         options={{ headerShown: true }}
                     />

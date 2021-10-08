@@ -32,7 +32,7 @@ export default function pack() {
                     text="200"
                     color="#071D48"
                     icon={<CoinBlack width={24} height={24} />}
-                    link={'Discover'}
+                    link={'Retour'}
                     style={styles.boxButton}
                 />
             </View>
@@ -52,7 +52,7 @@ export default function pack() {
                     text="200"
                     color="#071D48"
                     icon={<CoinBlack width={24} height={24} />}
-                    link={'Discover'}
+                    link={'Retour'}
                     style={styles.boxButton}
                 />
             </View>
@@ -72,7 +72,7 @@ export default function pack() {
                     text="200"
                     color="#071D48"
                     icon={<CoinBlack width={24} height={24} />}
-                    link={'Discover'}
+                    link={'Retour'}
                     style={styles.boxButton}
                 />
             </View>

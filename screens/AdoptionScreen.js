@@ -16,7 +16,7 @@ import Coin from '../assets/icons/Coin.js'
 
 export default function AdoptionScreen({ navigation }) {
     const press = () => {
-        navigation.navigate('Discover')
+        navigation.navigate('Retour')
     }
 
     return (
