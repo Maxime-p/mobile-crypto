@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import {
     View,
-    Text,
-    TouchableOpacity,
     StyleSheet,
     TextInput,
     ScrollView,
@@ -111,7 +109,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 8,
         backgroundColor: '#F4F4F4',
-        marginVertical: 15,
+        marginVertical: 10,
     },
     raw: {
         flex: 1,
