@@ -3,12 +3,17 @@ import { TouchableOpacity, Text, View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 export default function CustomButton(
+<<<<<<< HEAD
     { text, icon, outlined, link, color, bgColor, style } = {
         icon: false,
         outlined: false,
         color: 'black',
         bgColor: 'white',
     }
+=======
+    { text, icon, outlined, link, color, bgColor, font, style } =
+        { icon: false, outlined: false, color: 'black', bgColor: 'white', font : 16 }
+>>>>>>> 97cc6a9754c6d587c968593c03d444c146b8dfbe
 ) {
     const navigation = useNavigation()
 
@@ -43,12 +48,11 @@ export default function CustomButton(
     }
 
     return (
-        <TouchableOpacity
-            onPress={press}
-            style={{ ...getOutStyle(outlined, color, bgColor), ...style }}
-        >
-            <View style={styles.icon}>{icon}</View>
-            <Text style={{ ...styles.text, color }}>{text}</Text>
+        <TouchableOpacity onPress={press} style={{...getOutStyle(outlined, color, bgColor), ...style}} >
+            <View style={styles.icon}>
+                {icon}
+            </View>
+            <Text style={{...styles.text, color, fontSize: font}}>{text}</Text>
         </TouchableOpacity>
     )
 }
@@ -59,9 +63,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 24,
         height: 24,
-        marginRight: 8,
+        marginHorizontal: 8
     },
     text: {
-        textTransform: 'uppercase',
-    },
+        textTransform: "uppercase",
+    }
 })

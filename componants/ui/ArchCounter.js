@@ -1,16 +1,15 @@
 import React from 'react'
 import { StyleSheet, View, Dimensions, Text } from 'react-native'
-import Coin from '../../assets/icons/Coin'
-import Etherum from '../../assets/icons/Wallet'
 import CustomText from '../../componants/ui/CustomText.js'
+import CoinBlack from "../../assets/icons/CoinBlack";
+import Dollar from "../../assets/icons/Dollar";
 
 export default function ArchCounter({ text }) {
     return (
         <View style={[styles.container]}>
             <View style={[styles.nav]}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Coin
-                        fill="#071D48"
+                    <CoinBlack
                         width={20}
                         height={20}
                         marginRight={8}
@@ -21,8 +20,7 @@ export default function ArchCounter({ text }) {
                 </View>
                 <View style={[styles.red]}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Coin
-                            fill="#F06D76"
+                        <Dollar
                             width={20}
                             height={20}
                             marginRight={8}
@@ -48,13 +46,18 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     nav: {
-        paddingHorizontal: 10,
+        paddingHorizontal: 16,
         backgroundColor: 'white',
         justifyContent: 'space-around',
         borderRadius: 16,
         flexDirection: 'row',
-        paddingHorizontal: 10,
-        paddingVertical: 5,
+        paddingVertical: 8,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        elevation: 8,
     },
     gray: {
         color: '#071D48',

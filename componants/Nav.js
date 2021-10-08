@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Dimensions, StyleSheet, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import HomeScreen from '../screens/HomeScreen'
@@ -33,7 +33,12 @@ export default function Nav() {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <House color="#6D697C" width={32} height={32} />
+                            <House
+                                color="#6D697C"
+                                style={styles.item}
+                                width={32}
+                                height={32}
+                            />
                         ),
                     }}
                 />
@@ -41,10 +46,16 @@ export default function Nav() {
                 <BottomBar.Screen
                     name="Project"
                     component={ProjectScreen}
+                    style={styles.item}
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Info color="#6D697C" width={32} height={32} />
+                            <Info
+                                color="#6D697C"
+                                style={styles.item}
+                                width={32}
+                                height={32}
+                            />
                         ),
                     }}
                 />
@@ -61,20 +72,32 @@ export default function Nav() {
                 <BottomBar.Screen
                     name="Shelter"
                     component={ShelterScreen}
+                    style={styles.item}
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Shelter color="#6D697C" width={32} height={32} />
+                            <Shelter
+                                color="#6D697C"
+                                style={styles.item}
+                                width={32}
+                                height={32}
+                            />
                         ),
                     }}
                 />
                 <BottomBar.Screen
                     name="Wallet"
                     component={WalletScreen}
+                    style={styles.item}
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Wallet color="#6D697C" width={32} height={32} />
+                            <Wallet
+                                color="#6D697C"
+                                style={styles.item}
+                                width={32}
+                                height={32}
+                            />
                         ),
                     }}
                 />

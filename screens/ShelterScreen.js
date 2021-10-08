@@ -16,6 +16,7 @@ import CustomBarChart from '../componants/Chart.js'
 import CustomText from '../componants/ui/CustomText.js'
 import CustomButton from '../componants/ui/CustomButton.js'
 import Search from "../assets/icons/Search";
+import Chevron from "../assets/icons/Chevron";
 
 export default function ShelterScreen() {
     const [modalVisibility, setModalVisibility] = useState(false)
@@ -65,31 +66,35 @@ export default function ShelterScreen() {
                         style={{
                             width: Dimensions.get('window').width * 0.3,
                             height: Dimensions.get('window').height * 0.06,
+                            flexDirection: "row-reverse",
+                            justifyContent: "space-between"
                         }}
-                        icon={<Down color={'#FFF'} />}
+                        icon={<Chevron width={24} height={24} />}
                     />
                 </View>
 
-                <View style={styles.raw}>
-                    <Image
-                        style={styles.images}
-                        source={require('../assets/img/Card/Animals-1.png')}
-                    />
-                    <Image
-                        style={styles.images}
-                        source={require('../assets/img/Card/Animals-2.png')}
-                    />
-                </View>
+                <View style={styles.col}>
+                    <View style={styles.raw}>
+                        <Image
+                            style={styles.images}
+                            source={require('../assets/img/Card/Animals-1.png')}
+                        />
+                        <Image
+                            style={styles.images}
+                            source={require('../assets/img/Card/Animals-2.png')}
+                        />
+                    </View>
 
-                <View style={styles.raw}>
-                    <Image
-                        source={require('../assets/img/Card/Animals-3.png')}
-                        style={styles.images}
-                    />
-                    <Image
-                        style={styles.images}
-                        source={require('../assets/img/Card/Animals.png')}
-                    />
+                    <View style={styles.raw}>
+                        <Image
+                            source={require('../assets/img/Card/Animals-3.png')}
+                            style={styles.images}
+                        />
+                        <Image
+                            style={styles.images}
+                            source={require('../assets/img/Card/Animals.png')}
+                        />
+                    </View>
                 </View>
             </View>
             {/*  <TouchableOpacity onPress={() => setModalVisibility(true)}>
@@ -109,8 +114,8 @@ export default function ShelterScreen() {
 
 const styles = StyleSheet.create({
     input: {
-        height: 40,
-        padding: 10,
+        paddingVertical: 16,
+        paddingRight: 10,
         paddingLeft: 55,
         borderRadius: 8,
         backgroundColor: '#F4F4F4',
@@ -118,8 +123,12 @@ const styles = StyleSheet.create({
     },
     icon: {
         position: "absolute",
-        top: 26,
+        top: 36,
         left: 18,
+    },
+    col: {
+        marginTop: 32,
+        height: Dimensions.get('window').height * 0.5 + 24,
     },
     raw: {
         flex: 1,
