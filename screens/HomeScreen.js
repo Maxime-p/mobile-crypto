@@ -61,6 +61,7 @@ export default function HomeScreen() {
                         color="white"
                         bgColor="#071D48"
                         text="EN SAVOIR PLUS"
+                        link="Project"
                         icon={<Info color={'white'} />}
                     ></CustomButton>
                 </View>
@@ -96,6 +97,7 @@ export default function HomeScreen() {
                         marginTop: Dimensions.get('window').height * 0.26,
                     }}
                     color="white"
+                    link="Adoption"
                     bgColor="#F06D76"
                     text="EN SAVOIR PLUS"
                     icon={<Info color={'white'} />}
@@ -119,6 +121,7 @@ export default function HomeScreen() {
                     marginTop: Dimensions.get('window').height * 0.03,
                     marginHorizontal: 20,
                 }}
+                link="Adoption"
                 color="white"
                 bgColor="#4BC6B9"
                 text="EN SAVOIR PLUS"
@@ -147,6 +150,7 @@ export default function HomeScreen() {
                         }}
                         color="white"
                         bgColor="#F06D76"
+                        link="Wallet"
                         text="EN SAVOIR PLUS"
                         icon={<Info color={'white'} />}
                     ></CustomButton>
