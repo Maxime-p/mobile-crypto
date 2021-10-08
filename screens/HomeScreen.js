@@ -11,7 +11,9 @@ import {
 } from 'react-native'
 import ArchCounter from '../componants/ui/ArchCounter'
 import CustomText from '../componants/ui/CustomText'
-import CustomBouton from '../componants/ui/CustomButton'
+import CustomButton from '../componants/ui/CustomButton'
+import Pack from '../componants/ui/Pack'
+
 import Coin from '../assets/icons/Coin'
 import Info from '../assets/icons/Info'
 import Box from '../assets/icons/Box'
@@ -50,7 +52,7 @@ export default function HomeScreen() {
                         participez à la protection de nombreuses espèces dans le
                         monde.
                     </CustomText>
-                    <CustomBouton
+                    <CustomButton
                         style={{
                             height: Dimensions.get('window').height * 0.05,
                             width: Dimensions.get('window').width * 0.5,
@@ -60,7 +62,7 @@ export default function HomeScreen() {
                         bgColor="#071D48"
                         text="EN SAVOIR PLUS"
                         icon={<Info color={'white'} />}
-                    ></CustomBouton>
+                    ></CustomButton>
                 </View>
             </ImageBackground>
             <View
@@ -87,7 +89,7 @@ export default function HomeScreen() {
                 </View>
             </View>
             <View style={{ paddingHorizontal: 20 }}>
-                <CustomBouton
+                <CustomButton
                     style={{
                         height: Dimensions.get('window').height * 0.05,
                         textAlign: 'center',
@@ -97,7 +99,7 @@ export default function HomeScreen() {
                     bgColor="#F06D76"
                     text="EN SAVOIR PLUS"
                     icon={<Info color={'white'} />}
-                ></CustomBouton>
+                ></CustomButton>
                 <CustomText
                     fontWeight="bold"
                     uppercase
@@ -109,66 +111,8 @@ export default function HomeScreen() {
                 </CustomText>
             </View>
 
-            <ScrollView horizontal={true}>
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.5,
-                        flex: 1,
-                    }}
-                >
-                    <Image
-                        style={styles.packimage}
-                        source={require('../assets/img/pack-hallow.png')}
-                    />
-                    <CustomText align={'center'}>Pack Halloween</CustomText>
-                    <CustomBouton
-                        outlined
-                        text="200"
-                        color="#071D48"
-                        icon={<Coin color={'#071D48'} />}
-                        style={styles.boxButton}
-                    />
-                </View>
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.5,
-                        flex: 1,
-                    }}
-                >
-                    <Image
-                        style={styles.packimage}
-                        source={require('../assets/img/pack-asso.png')}
-                    />
-                    <CustomText align={'center'}>Pack Halloween</CustomText>
-                    <CustomBouton
-                        outlined
-                        text="200"
-                        color="#071D48"
-                        icon={<Coin color={'#071D48'} />}
-                        style={styles.boxButton}
-                    />
-                </View>
-                <View
-                    style={{
-                        width: Dimensions.get('window').width * 0.5,
-                        flex: 1,
-                    }}
-                >
-                    <Image
-                        style={styles.packimage}
-                        source={require('../assets/img/pack-hallow.png')}
-                    />
-                    <CustomText align={'center'}>Pack Halloween</CustomText>
-                    <CustomBouton
-                        outlined
-                        text="200"
-                        color="#071D48"
-                        icon={<Coin color={'#071D48'} />}
-                        style={styles.boxButton}
-                    />
-                </View>
-            </ScrollView>
-            <CustomBouton
+            <Pack />
+            <CustomButton
                 style={{
                     height: Dimensions.get('window').height * 0.08,
                     textAlign: 'center',
@@ -179,7 +123,7 @@ export default function HomeScreen() {
                 bgColor="#4BC6B9"
                 text="EN SAVOIR PLUS"
                 icon={<Box color={'white'} />}
-            ></CustomBouton>
+            ></CustomButton>
             <ImageBackground
                 style={styles.footer}
                 source={require('../assets/img/bg-dark.png')}
@@ -195,7 +139,7 @@ export default function HomeScreen() {
                         Arch (ARH)
                     </CustomText>
                     <CustomText color="#1ED760">+7,5%</CustomText>
-                    <CustomBouton
+                    <CustomButton
                         style={{
                             height: Dimensions.get('window').height * 0.08,
                             textAlign: 'center',
@@ -205,7 +149,7 @@ export default function HomeScreen() {
                         bgColor="#F06D76"
                         text="EN SAVOIR PLUS"
                         icon={<Info color={'white'} />}
-                    ></CustomBouton>
+                    ></CustomButton>
                 </View>
             </ImageBackground>
         </ScrollView>
