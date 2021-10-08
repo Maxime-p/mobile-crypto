@@ -1,17 +1,11 @@
 import React from 'react'
-import {
-    View,
-    Image,
-    StyleSheet,
-    Text,
-    Dimensions,
-} from 'react-native'
-import {useAssets} from "expo-asset";
-import {useFonts} from "expo-font";
-import CustomButton from "../componants/ui/CustomButton";
-import Import from "../assets/icons/Import";
-import Wallet from "../assets/icons/Wallet";
-import CustomText from "../componants/ui/CustomText";
+import { View, Image, StyleSheet, Text, Dimensions } from 'react-native'
+import { useAssets } from 'expo-asset'
+import { useFonts } from 'expo-font'
+import CustomButton from '../componants/ui/CustomButton'
+import Import from '../assets/icons/Import'
+import Wallet from '../assets/icons/Wallet'
+import CustomText from '../componants/ui/CustomText'
 
 export default function AuthScreen({ navigation }) {
     const [isAssetsLoaded] = useAssets([
@@ -23,6 +17,12 @@ export default function AuthScreen({ navigation }) {
         require('../assets/img/pack-asso.png'),
         require('../assets/img/pack-hallow.png'),
         require('../assets/img/bg-lines.png'),
+        require('../assets/img/Card/Animals-1.png'),
+        require('../assets/img/Card/Animals-2.png'),
+        require('../assets/img/Card/Animals-3.png'),
+        require('../assets/img/Card/Animals-5.png'),
+        require('../assets/img/Card/Animals.png'),
+        require('../assets/img/animal-modale.png'),
     ])
 
     const [isFontsLoaded] = useFonts({
@@ -30,17 +30,32 @@ export default function AuthScreen({ navigation }) {
         HelveticaNeue: require('../assets/fonts/HelveticaNeue/HelveticaNeue.ttf'),
         HelveticaNeueMedium: require('../assets/fonts/HelveticaNeue/HelveticaNeue-Medium.ttf'),
         HelveticaNeueBold: require('../assets/fonts/HelveticaNeue/HelveticaNeue-Bold.ttf'),
-    });
+    })
 
     const Loader = () => {
-        if (!isAssetsLoaded || !isFontsLoaded){
-            return (<Image source={require('../assets/img/loader.gif')} />)
-        }else{
+        if (!isAssetsLoaded || !isFontsLoaded) {
+            return <Image source={require('../assets/img/loader.gif')} />
+        } else {
             return (
                 <View>
-                    <CustomText font={32} fontWeight={'bold'} align={'center'}>Bienvenue sur l’Arch</CustomText>
-                    <CustomButton text={'Importer un portefeuille'} icon={<Import color={'#FFF'}/>} color={'#FFF'} bgColor={'#F06D76'} link={'App'} style={styles.middleButton} />
-                    <CustomButton outlined={true} text={'Créer un portefeuille'} icon={<Wallet color={'#071D48'}/>} color={'#071D48'} link={'App'} />
+                    <CustomText font={32} fontWeight={'bold'} align={'center'}>
+                        Bienvenue sur l’Arch
+                    </CustomText>
+                    <CustomButton
+                        text={'Importer un portefeuille'}
+                        icon={<Import color={'#FFF'} />}
+                        color={'#FFF'}
+                        bgColor={'#F06D76'}
+                        link={'App'}
+                        style={styles.middleButton}
+                    />
+                    <CustomButton
+                        outlined={true}
+                        text={'Créer un portefeuille'}
+                        icon={<Wallet color={'#071D48'} />}
+                        color={'#071D48'}
+                        link={'App'}
+                    />
                 </View>
             )
         }
@@ -48,9 +63,12 @@ export default function AuthScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/img/auth.png')} style={styles.image} />
+            <Image
+                source={require('../assets/img/auth.png')}
+                style={styles.image}
+            />
             <View style={styles.content}>
-                <Loader/>
+                <Loader />
             </View>
         </View>
     )
@@ -69,11 +87,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         width: Dimensions.get('window').width,
-        alignItems: "center",
+        alignItems: 'center',
         paddingHorizontal: 20,
     },
     middleButton: {
         marginTop: 40,
-        marginBottom: 16
-    }
+        marginBottom: 16,
+    },
 })
