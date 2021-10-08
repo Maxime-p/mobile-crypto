@@ -9,7 +9,6 @@ import {
     TouchableWithoutFeedback,
     ImageBackground,
 } from 'react-native'
-import ArchCounter from '../componants/ui/ArchCounter.js'
 import CustomButton from '../componants/ui/CustomButton.js'
 import CustomText from '../componants/ui/CustomText.js'
 import Info from '../assets/icons/Info.js'
@@ -49,7 +48,6 @@ export default function Discover({ navigation }) {
                 }}
                 source={require('../assets/img/project/bottom.png')}
             />
-            <ArchCounter />
 
             <View style={styles.imageContainer}>
                 <Image
