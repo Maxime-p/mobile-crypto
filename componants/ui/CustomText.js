@@ -8,7 +8,7 @@ function getTextStyle(color, font, fontWeight, fontFamily, align, uppercase) {
         textAlign: align,
         fontWeight: fontWeight,
         fontFamily: fontFamily,
-        textTransform: uppercase ? 'uppercase' : 'none'
+        textTransform: uppercase ? 'uppercase' : 'none',
     }
 }
 
@@ -19,7 +19,7 @@ export default function CustomText(
         fontWeight: 'medium',
         fontFamily: 'HelveticaNeue',
         align: 'start',
-        uppercase: false
+        uppercase: false,
     }
 ) {
     return (
