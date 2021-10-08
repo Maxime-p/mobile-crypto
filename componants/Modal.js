@@ -1,13 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import {
-    Alert,
-    Modal,
-    StyleSheet,
-    Text,
-    Pressable,
-    View,
-    Dimensions,
-} from 'react-native'
+import React from 'react'
+import { Modal, StyleSheet, View, Dimensions } from 'react-native'
 import GestureRecognizer from 'react-native-swipe-gestures'
 export default function CustomModal({ children, handleSwipeDown }) {
     return (
