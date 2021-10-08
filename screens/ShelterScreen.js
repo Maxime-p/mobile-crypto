@@ -26,53 +26,69 @@ export default function ShelterScreen() {
     }
     const [text, onChangeText] = React.useState('')
     return (
-        <ScrollView style={{ backgroundColor: 'white' }}>
-            <ArcheCounter />
-
-            <View style={{ padding: 20 }}>
-                <CustomText font={24} fontWeight="bold">
-                    Mon refuge
-                </CustomText>
-
-                <TextInput
-                    placeholder="Recherchez votre animal..."
-                    style={styles.input}
-                    onChangeText={onChangeText}
-                    value={text}
-                />
-
-                <CustomButton
-                    text="Tous"
-                    bgColor="#071D48"
-                    color="white"
+        <ScrollView>
+            <View
+                style={{
+                    backgroundColor: 'white',
+                    height: Dimensions.get('window').height,
+                }}
+            >
+                <Image
                     style={{
-                        width: Dimensions.get('window').width * 0.3,
-                        height: Dimensions.get('window').height * 0.06,
+                        position: 'absolute',
+                        bottom: Dimensions.get('window').height * -0.25,
+                        width: Dimensions.get('window').width,
+                        height: Dimensions.get('window').height,
                     }}
-                    icon={<Down color={'#FFF'} />}
-                ></CustomButton>
-            </View>
+                    source={require('../assets/img/union.png')}
+                />
+                <ArcheCounter />
 
-            <View style={styles.raw}>
-                <Image
-                    style={styles.images}
-                    source={require('../assets/img/Card/Animals-1.png')}
-                />
-                <Image
-                    style={styles.images}
-                    source={require('../assets/img/Card/Animals-2.png')}
-                />
-            </View>
+                <View style={{ padding: 20 }}>
+                    <CustomText font={24} fontWeight="bold">
+                        Mon refuge
+                    </CustomText>
 
-            <View style={styles.raw}>
-                <Image
-                    source={require('../assets/img/Card/Animals-3.png')}
-                    style={styles.images}
-                />
-                <Image
-                    style={styles.images}
-                    source={require('../assets/img/Card/Animals.png')}
-                />
+                    <TextInput
+                        placeholder="Recherchez votre animal..."
+                        style={styles.input}
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
+
+                    <CustomButton
+                        text="Tous"
+                        bgColor="#071D48"
+                        color="white"
+                        style={{
+                            width: Dimensions.get('window').width * 0.3,
+                            height: Dimensions.get('window').height * 0.06,
+                        }}
+                        icon={<Down color={'#FFF'} />}
+                    ></CustomButton>
+                </View>
+
+                <View style={styles.raw}>
+                    <Image
+                        style={styles.images}
+                        source={require('../assets/img/Card/Animals-1.png')}
+                    />
+                    <Image
+                        style={styles.images}
+                        source={require('../assets/img/Card/Animals-2.png')}
+                    />
+                </View>
+
+                <View style={styles.raw}>
+                    <Image
+                        source={require('../assets/img/Card/Animals-3.png')}
+                        style={styles.images}
+                    />
+                    <Image
+                        style={styles.images}
+                        source={require('../assets/img/Card/Animals.png')}
+                    />
+                </View>
             </View>
             {/*  <TouchableOpacity onPress={() => setModalVisibility(true)}>
                 <Text>modale</Text>
