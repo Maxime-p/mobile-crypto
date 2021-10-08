@@ -5,6 +5,7 @@ import {
     StyleSheet,
     Dimensions,
     Image,
+    Text,
     TouchableOpacity,
     Modal,
     TouchableWithoutFeedback,
@@ -162,6 +163,69 @@ export default function WalletScreen() {
                                         >
                                             Swap de crypto
                                         </CustomText>
+                                        {/* Salut, je voulais pas trop toucher ton code mais quand meme t'aider a
+                                         l'avancer pour demain (fin', ce matin) , donc voici le début de mon code */}
+                                        <View style={styles.convertView}>
+                                            <View>
+                                                <CustomText
+                                                    color="white"
+                                                    font={14}
+                                                    fontWeight="bold"
+                                                >
+                                                    Vous payez
+                                                </CustomText>
+                                                <CustomText
+                                                    color="white"
+                                                    font={24}
+                                                >
+                                                    0
+                                                </CustomText>
+                                                <CustomText
+                                                    color="white"
+                                                    font={12}
+                                                >
+                                                    Solde: 13.27 ETH
+                                                </CustomText>
+                                            </View>
+                                            <CustomText
+                                                color="white"
+                                                font={28}
+                                                fontWeight="bold"
+                                            >
+                                                ETH
+                                            </CustomText>
+                                        </View>
+                                        <View style={styles.convertView}>
+                                            <View>
+                                                <CustomText
+                                                    color="white"
+                                                    font={14}
+                                                    fontWeight="bold"
+                                                >
+                                                    Vous payez
+                                                </CustomText>
+                                                <CustomText
+                                                    color="white"
+                                                    font={24}
+                                                >
+                                                    0
+                                                </CustomText>
+                                                <CustomText
+                                                    color="white"
+                                                    font={12}
+                                                >
+                                                    Solde: 13.27 ETH
+                                                </CustomText>
+                                            </View>
+                                            <CustomText
+                                                color="white"
+                                                font={28}
+                                                fontWeight="bold"
+                                            >
+                                                ETH
+                                            </CustomText>
+                                        </View>
+                                        {/* C'est bon, c'est sa fin */}
                                         <CustomText
                                             font={20}
                                             fontWeight={'500'}
@@ -286,5 +350,14 @@ const styles = StyleSheet.create({
     },
     swap: {
         marginTop: 32,
+    },
+    convertView: {
+        backgroundColor: '#4BC6B9',
+        borderRadius: 8,
+        padding: 20,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
 })
