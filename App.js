@@ -11,20 +11,26 @@ import Constants from 'expo-constants'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Nav from './componants/Nav'
 import AuthScreen from './screens/AuthScreen'
+import DiscoverScreen from './screens/DiscoverCardScreen'
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
-
     return (
         <SafeAreaView style={styles.container}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName={'Auth'}>
                     <Stack.Screen
+                        name="Discover"
+                        component={DiscoverScreen}
+                        options={{ headerShown: true }}
+                    />
+                    <Stack.Screen
                         name="Auth"
                         component={AuthScreen}
                         options={{ headerShown: false }}
                     />
+
                     <Stack.Screen
                         name="App"
                         component={Nav}

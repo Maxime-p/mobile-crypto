@@ -31,6 +31,7 @@ export default function pack() {
                     text="200"
                     color="#071D48"
                     icon={<Coin color={'#071D48'} />}
+                    link={'Discover'}
                     style={styles.boxButton}
                 />
             </View>
@@ -44,13 +45,13 @@ export default function pack() {
                     style={styles.packimage}
                     source={require('../../assets/img/pack-asso.png')}
                 />
-                <CustomText align={'center'}>Pack Association LPO
-                </CustomText>
+                <CustomText align={'center'}>Pack Association LPO</CustomText>
                 <CustomButton
                     outlined
                     text="200"
                     color="#071D48"
                     icon={<Coin color={'#071D48'} />}
+                    link={'Discover'}
                     style={styles.boxButton}
                 />
             </View>
@@ -70,6 +71,7 @@ export default function pack() {
                     text="200"
                     color="#071D48"
                     icon={<Coin color={'#071D48'} />}
+                    link={'Discover'}
                     style={styles.boxButton}
                 />
             </View>

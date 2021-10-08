@@ -1,21 +1,20 @@
-import React from "react";
-import {StyleSheet, View} from "react-native";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import HomeScreen from "../screens/HomeScreen";
-import ProjectScreen from "../screens/ProjectScreen";
-import AdoptionScreen from "../screens/AdoptionScreen";
-import ShelterScreen from "../screens/ShelterScreen";
+import HomeScreen from '../screens/HomeScreen'
+import ProjectScreen from '../screens/ProjectScreen'
+import AdoptionScreen from '../screens/AdoptionScreen'
+import ShelterScreen from '../screens/ShelterScreen'
 
-import House from '../assets/icons/House.js';
-import Info from "../assets/icons/Info";
-import Shelter from "../assets/icons/Shelter";
-import Wallet from "../assets/icons/Wallet";
-import {TabBarAdvancedButton} from "./ui/TabBarAdvancedButton";
-import WalletScreen from "../screens/WalletScreen";
+import House from '../assets/icons/House.js'
+import Info from '../assets/icons/Info'
+import Shelter from '../assets/icons/Shelter'
+import Wallet from '../assets/icons/Wallet'
+import { TabBarAdvancedButton } from './ui/TabBarAdvancedButton'
+import WalletScreen from '../screens/WalletScreen'
 
-
-const BottomBar = createBottomTabNavigator();
+const BottomBar = createBottomTabNavigator()
 
 export default function Nav() {
     return (
@@ -25,7 +24,7 @@ export default function Nav() {
                 initialRouteName="Splash"
                 screenOptions={{
                     tabBarActiveTintColor: '#e91e63',
-                    headerShown: false
+                    headerShown: false,
                 }}
             >
                 <BottomBar.Screen
@@ -34,18 +33,19 @@ export default function Nav() {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <House color='#6D697C' width={32} height={32}/>
-                        )
+                            <House color="#6D697C" width={32} height={32} />
+                        ),
                     }}
                 />
+
                 <BottomBar.Screen
                     name="Project"
                     component={ProjectScreen}
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Info color='#6D697C' width={32} height={32}/>
-                        )
+                            <Info color="#6D697C" width={32} height={32} />
+                        ),
                     }}
                 />
                 <BottomBar.Screen
@@ -54,8 +54,8 @@ export default function Nav() {
                     options={{
                         tabBarShowLabel: false,
                         tabBarButton: (props) => (
-                            <TabBarAdvancedButton  {...props}/>
-                        )
+                            <TabBarAdvancedButton {...props} />
+                        ),
                     }}
                 />
                 <BottomBar.Screen
@@ -64,8 +64,8 @@ export default function Nav() {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Shelter color='#6D697C' width={32} height={32}/>
-                        )
+                            <Shelter color="#6D697C" width={32} height={32} />
+                        ),
                     }}
                 />
                 <BottomBar.Screen
@@ -74,8 +74,8 @@ export default function Nav() {
                     options={{
                         tabBarShowLabel: false,
                         tabBarIcon: () => (
-                            <Wallet color='#6D697C' width={32} height={32}/>
-                        )
+                            <Wallet color="#6D697C" width={32} height={32} />
+                        ),
                     }}
                 />
             </BottomBar.Navigator>
@@ -88,6 +88,6 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     nav: {
-        backgroundColor: '#5DB1C3'
-    }
-});
+        backgroundColor: '#5DB1C3',
+    },
+})

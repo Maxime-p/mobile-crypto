@@ -14,7 +14,11 @@ import CustomText from '../componants/ui/CustomText.js'
 import Pack from '../componants/ui/Pack.js'
 import Coin from '../assets/icons/Coin.js'
 
-export default function AdoptionScreen() {
+export default function AdoptionScreen({ navigation }) {
+    const press = () => {
+        navigation.navigate('Discover')
+    }
+
     return (
         <ScrollView style={{ backgroundColor: 'white' }}>
             <Image
@@ -37,7 +41,7 @@ export default function AdoptionScreen() {
                         source={require('../assets/img/pack.png')}
                     />
                 </View>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={press}>
                     <View
                         style={{
                             flex: 1,
@@ -53,7 +57,7 @@ export default function AdoptionScreen() {
                         <Text
                             style={{ color: '#071D48', paddingHorizontal: 4 }}
                         >
-                            200{' '}
+                            200
                         </Text>
                     </View>
                 </TouchableOpacity>
