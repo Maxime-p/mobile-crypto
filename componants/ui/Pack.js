@@ -11,6 +11,7 @@ import Coin from '../../assets/icons/Coin.js'
 
 import CustomText from './CustomText.js'
 import CustomButton from './CustomButton.js'
+import CoinBlack from '../../assets/icons/CoinBlack'
 
 export default function pack() {
     return (
@@ -30,7 +31,7 @@ export default function pack() {
                     outlined
                     text="200"
                     color="#071D48"
-                    icon={<Coin color={'#071D48'} />}
+                    icon={<CoinBlack width={24} height={24} />}
                     link={'Discover'}
                     style={styles.boxButton}
                 />
@@ -50,7 +51,7 @@ export default function pack() {
                     outlined
                     text="200"
                     color="#071D48"
-                    icon={<Coin color={'#071D48'} />}
+                    icon={<CoinBlack width={24} height={24} />}
                     link={'Discover'}
                     style={styles.boxButton}
                 />
@@ -70,7 +71,7 @@ export default function pack() {
                     outlined
                     text="200"
                     color="#071D48"
-                    icon={<Coin color={'#071D48'} />}
+                    icon={<CoinBlack width={24} height={24} />}
                     link={'Discover'}
                     style={styles.boxButton}
                 />
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
     boxButton: {
         height: Dimensions.get('window').height * 0.06,
         textAlign: 'center',
+        marginTop: 16,
         marginHorizontal: 20,
     },
 })

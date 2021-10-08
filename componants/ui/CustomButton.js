@@ -3,11 +3,12 @@ import { TouchableOpacity, Text, View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 export default function CustomButton(
-    { text, icon, outlined, link, color, bgColor, style } = {
+    { text, icon, outlined, link, color, bgColor, font, style } = {
         icon: false,
         outlined: false,
         color: 'black',
         bgColor: 'white',
+        font: 16,
     }
 ) {
     const navigation = useNavigation()
@@ -48,7 +49,9 @@ export default function CustomButton(
             style={{ ...getOutStyle(outlined, color, bgColor), ...style }}
         >
             <View style={styles.icon}>{icon}</View>
-            <Text style={{ ...styles.text, color }}>{text}</Text>
+            <Text style={{ ...styles.text, color, fontSize: font }}>
+                {text}
+            </Text>
         </TouchableOpacity>
     )
 }
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 24,
         height: 24,
-        marginRight: 8,
+        marginHorizontal: 8,
     },
     text: {
         textTransform: 'uppercase',

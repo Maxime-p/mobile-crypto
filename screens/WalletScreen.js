@@ -336,6 +336,7 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').height * 0.6,
         borderTopEndRadius: 16,
         borderTopStartRadius: 16,
+        paddingTop: 10,
         paddingHorizontal: 20,
     },
     line: {
@@ -344,7 +345,7 @@ const styles = StyleSheet.create({
         borderRadius: 27,
         backgroundColor: 'black',
         alignSelf: 'center',
-        marginBottom: 32,
+        marginBottom: 28,
     },
     swap: {
         marginTop: 32,

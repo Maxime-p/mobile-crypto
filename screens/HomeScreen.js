@@ -17,6 +17,7 @@ import Pack from '../componants/ui/Pack'
 import Coin from '../assets/icons/Coin'
 import Info from '../assets/icons/Info'
 import Box from '../assets/icons/Box'
+import Up from "../assets/icons/Up";
 
 export default function HomeScreen() {
     return (
@@ -43,7 +44,7 @@ export default function HomeScreen() {
                         L'arch
                     </CustomText>
                     <CustomText
-                        style={{ paddingVertical: 10, paddingRight: 30 }}
+                        style={{ width: Dimensions.get('window').width *0.6, paddingTop: 10, paddingBottom: 20, paddingRight: 30, lineHeight: 24 }}
                         color={'white'}
                         font={16}
                         align={'justify'}
@@ -62,6 +63,7 @@ export default function HomeScreen() {
                         bgColor="#071D48"
                         text="EN SAVOIR PLUS"
                         link="Project"
+                        font={14}
                         icon={<Info color={'white'} />}
                     />
                 </View>
@@ -92,8 +94,6 @@ export default function HomeScreen() {
             <View style={{ marginTop: 30,paddingHorizontal: 20 }}>
                 <CustomButton
                     style={{
-                        height: Dimensions.get('window').height * 0.05,
-                        textAlign: 'center',
                         marginTop: Dimensions.get('window').height * 0.26,
                     }}
                     color="white"
@@ -124,7 +124,7 @@ export default function HomeScreen() {
                 link="Adoption"
                 color="white"
                 bgColor="#4BC6B9"
-                text="EN SAVOIR PLUS"
+                text="Voir tous les packs"
                 icon={<Box color={'white'} />}
             />
             <ImageBackground
@@ -137,11 +137,15 @@ export default function HomeScreen() {
                         paddingHorizontal: 20,
                     }}
                 >
-                    <CustomText color="white">$48594.458765</CustomText>
-                    <CustomText color="white" font={28}>
+                    <CustomText color="white" style={{opacity: 0.7}}>$48594.458765</CustomText>
+                    <CustomText color="white" font={28} fontWeight={'700'}>
                         Arch (ARH)
                     </CustomText>
-                    <CustomText color="#1ED760">+7,5%</CustomText>
+                    <View style={{flexDirection: "row", alignItems: "center"}}>
+                        <Up style={styles.icon} color={'#1ED760'} width={8} height={8}/>
+                        <CustomText color="#1ED760">+7,5%</CustomText>
+                    </View>
+
                     <CustomButton
                         style={{
                             height: Dimensions.get('window').height * 0.08,
@@ -198,4 +202,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginHorizontal: 20,
     },
+    icon: {
+        marginRight: 3
+    }
 })
