@@ -4,7 +4,7 @@ import { Image, StyleSheet, View, Dimensions, Text, Modal } from 'react-native'
 export default function BlackScreen() {
     return (
         <Modal animationType="none" transparent={true} visible={true}>
-            <View style={styles.BlackScreen}></View>
+            <View style={styles.BlackScreen}/>
         </Modal>
     )
 }

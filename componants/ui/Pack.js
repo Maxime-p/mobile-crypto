@@ -17,7 +17,7 @@ export default function pack() {
         <ScrollView horizontal={true}>
             <View
                 style={{
-                    width: Dimensions.get('window').width * 0.5,
+                    width: Dimensions.get('window').width * 0.4,
                     flex: 1,
                 }}
             >
@@ -36,7 +36,7 @@ export default function pack() {
             </View>
             <View
                 style={{
-                    width: Dimensions.get('window').width * 0.5,
+                    width: Dimensions.get('window').width * 0.4,
                     flex: 1,
                 }}
             >
@@ -44,7 +44,8 @@ export default function pack() {
                     style={styles.packimage}
                     source={require('../../assets/img/pack-asso.png')}
                 />
-                <CustomText align={'center'}>Pack Halloween</CustomText>
+                <CustomText align={'center'}>Pack Association LPO
+                </CustomText>
                 <CustomButton
                     outlined
                     text="200"
@@ -55,7 +56,7 @@ export default function pack() {
             </View>
             <View
                 style={{
-                    width: Dimensions.get('window').width * 0.5,
+                    width: Dimensions.get('window').width * 0.4,
                     flex: 1,
                 }}
             >
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     packimage: {
-        width: Dimensions.get('window').width * 0.5,
+        width: Dimensions.get('window').width * 0.4,
         height: Dimensions.get('window').height * 0.2,
         padding: 10,
     },

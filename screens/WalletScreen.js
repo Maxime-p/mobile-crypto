@@ -65,11 +65,11 @@ export default function WalletScreen() {
                             <CustomText
                                 font={14}
                                 fontWeight={'500'}
-                                color={'#F06D76'}
+                                color={'#1ED760'}
                             >
                                 $12.38
                             </CustomText>
-                            <Up style={styles.icon} color={'#1ED760'} />
+                            <Up style={styles.icon} color={'#1ED760'} width={8} height={8} />
                             <CustomText
                                 font={14}
                                 fontWeight={'500'}
@@ -81,7 +81,7 @@ export default function WalletScreen() {
                         <CustomText
                             font={14}
                             fontWeight={'700'}
-                            color={'#F06D76'}
+                            color={'#071D48'}
                         >
                             $8 096.52
                         </CustomText>
@@ -114,11 +114,11 @@ export default function WalletScreen() {
                             >
                                 $3 375.25
                             </CustomText>
-                            <Down style={styles.icon} color={'#1ED760'} />
+                            <Down style={styles.icon} color={'#F06D76'} width={8} height={8} />
                             <CustomText
                                 font={14}
                                 fontWeight={'500'}
-                                color={'#071D48'}
+                                color={'#F06D76'}
                             >
                                 -2,47%
                             </CustomText>
@@ -126,7 +126,7 @@ export default function WalletScreen() {
                         <CustomText
                             font={14}
                             fontWeight={'700'}
-                            color={'#F06D76'}
+                            color={'#071D48'}
                         >
                             $44 789.5675
                         </CustomText>
@@ -163,8 +163,6 @@ export default function WalletScreen() {
                                         >
                                             Swap de crypto
                                         </CustomText>
-                                        {/* Salut, je voulais pas trop toucher ton code mais quand meme t'aider a
-                                         l'avancer pour demain (fin', ce matin) , donc voici le début de mon code */}
                                         <View style={styles.convertView}>
                                             <View>
                                                 <CustomText
@@ -306,9 +304,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     icon: {
-        width: 10,
-        height: 10,
-        marginLeft: 4,
+        marginTop: 2,
+        marginLeft: 5,
+        marginRight: 2
     },
     getArch: {
         marginTop: 24,

@@ -15,6 +15,7 @@ import CustomModal from '../componants/Modal.js'
 import CustomBarChart from '../componants/Chart.js'
 import CustomText from '../componants/ui/CustomText.js'
 import CustomButton from '../componants/ui/CustomButton.js'
+import Search from "../assets/icons/Search";
 
 export default function ShelterScreen() {
     const [modalVisibility, setModalVisibility] = useState(false)
@@ -47,12 +48,15 @@ export default function ShelterScreen() {
                         Mon refuge
                     </CustomText>
 
-                    <TextInput
-                        placeholder="Recherchez votre animal..."
-                        style={styles.input}
-                        onChangeText={onChangeText}
-                        value={text}
-                    />
+                    <View style={{position: 'relative'}}>
+                        <TextInput
+                            placeholder="Recherchez votre animal..."
+                            style={styles.input}
+                            onChangeText={onChangeText}
+                            value={text}
+                        />
+                        <Search color={'#6D697C'} style={styles.icon} width={20} height={20}/>
+                    </View>
 
                     <CustomButton
                         text="Tous"
@@ -63,7 +67,7 @@ export default function ShelterScreen() {
                             height: Dimensions.get('window').height * 0.06,
                         }}
                         icon={<Down color={'#FFF'} />}
-                    ></CustomButton>
+                    />
                 </View>
 
                 <View style={styles.raw}>
@@ -107,9 +111,15 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         padding: 10,
+        paddingLeft: 55,
         borderRadius: 8,
         backgroundColor: '#F4F4F4',
-        marginVertical: 10,
+        marginVertical: 16,
+    },
+    icon: {
+        position: "absolute",
+        top: 26,
+        left: 18,
     },
     raw: {
         flex: 1,

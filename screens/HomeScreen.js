@@ -63,7 +63,7 @@ export default function HomeScreen() {
                         text="EN SAVOIR PLUS"
                         link="Project"
                         icon={<Info color={'white'} />}
-                    ></CustomButton>
+                    />
                 </View>
             </ImageBackground>
             <View
@@ -75,7 +75,7 @@ export default function HomeScreen() {
                 <CustomText fontWeight="bold" font={32}>
                     Adoption
                 </CustomText>
-                <CustomText>
+                <CustomText font={16} style={{lineHeight: 24}}>
                     Comment avoir votre propre animal ? Achetez une boîte et
                     regardez quel animal vous allez pouvoir adopter. Commun ou
                     bien légendaire, kangourou ou bien rhinocéros vous pouvez en
@@ -89,7 +89,7 @@ export default function HomeScreen() {
                     />
                 </View>
             </View>
-            <View style={{ paddingHorizontal: 20 }}>
+            <View style={{ marginTop: 30,paddingHorizontal: 20 }}>
                 <CustomButton
                     style={{
                         height: Dimensions.get('window').height * 0.05,
@@ -101,7 +101,7 @@ export default function HomeScreen() {
                     bgColor="#F06D76"
                     text="EN SAVOIR PLUS"
                     icon={<Info color={'white'} />}
-                ></CustomButton>
+                />
                 <CustomText
                     fontWeight="bold"
                     uppercase
@@ -126,7 +126,7 @@ export default function HomeScreen() {
                 bgColor="#4BC6B9"
                 text="EN SAVOIR PLUS"
                 icon={<Box color={'white'} />}
-            ></CustomButton>
+            />
             <ImageBackground
                 style={styles.footer}
                 source={require('../assets/img/bg-dark.png')}
@@ -153,7 +153,7 @@ export default function HomeScreen() {
                         link="Wallet"
                         text="EN SAVOIR PLUS"
                         icon={<Info color={'white'} />}
-                    ></CustomButton>
+                    />
                 </View>
             </ImageBackground>
         </ScrollView>
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
         width: null,
     },
     imageContainer: {
-        bottom: Dimensions.get('window').height * -0.28,
+        bottom: Dimensions.get('window').height * -0.32,
         flex: 1,
         height: Dimensions.get('window').height * 0.3,
         position: 'absolute',
